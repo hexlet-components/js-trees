@@ -46,4 +46,10 @@ describe('Pair', () => {
       assert(false);
     }
   });
+
+  it('#removeChild', () => {
+    const subtree = tree.getChild('var');
+    subtree.removeChild('lib');
+    assert.ok(!subtree.hasChildren());
+  });
 });
