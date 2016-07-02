@@ -7,7 +7,6 @@
     "test": "mocha --compilers js:babel-core/register",
     "build": "babel src --out-dir dist",
     "eslint": "eslint",
-
     "prepublish": "npm run build"
   },
   "repository": {

@@ -11,11 +11,10 @@ describe('Pair', () => {
   before(() => {
     tree = new Tree('/');
     tree.addChild('var')
-      .addChild('etc')
-      .addChild('home');
-
-    const varChild = tree.getChild('var');
-    varChild.addChild('run').addChild('lib');
+      .addChild('lib')
+      .addChild('run');
+    tree.addChild('etc');
+    tree.addChild('home');
   });
 
   it('#hasChildren', () => {
