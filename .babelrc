@@ -1,0 +1,12 @@
+{
+  "presets": ["es2015", "es2016", "stage-0"],
+  "plugins": [
+    ["typecheck", {
+      "disable": {
+        "production": true
+      }
+    }],
+    "syntax-flow",
+    "transform-flow-strip-types"
+  ]
+}

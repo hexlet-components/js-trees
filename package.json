@@ -1,0 +1,38 @@
+{
+  "name": "hexlet-trees",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register",
+    "build": "babel src --out-dir dist",
+    "eslint": "eslint",
+
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexlet-components/js-trees.git"
+  },
+  "author": "Kirill Mokevnin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hexlet-components/js-trees/issues"
+  },
+  "homepage": "https://github.com/hexlet-components/js-trees#readme",
+  "devDependencies": {
+    "babel-plugin-syntax-flow": "*",
+    "babel-plugin-transform-flow-strip-types": "*",
+    "babel-plugin-typecheck": "*",
+    "babel-eslint": "*",
+    "babel-core": "*",
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-es2016": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-plugin-import": "*",
+    "eslint-config-airbnb": "*",
+    "mocha": "*"
+  }
+}
