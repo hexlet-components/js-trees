@@ -3,12 +3,12 @@
 import 'babel-polyfill';
 
 class Tree {
-  parent: Tree | null;
+  parent: ?Tree;
   key: string;
   meta: mixed;
   children: { [key: string]: Tree };
 
-  constructor(key: string, meta: mixed, parent: Tree | null = null) {
+  constructor(key: string, meta: mixed, parent: ?Tree) {
     this.parent = parent;
     this.key = key;
     this.meta = meta;
