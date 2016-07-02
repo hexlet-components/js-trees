@@ -53,7 +53,7 @@ class Tree {
     return this.children[key];
   }
 
-  getDeepChild(...keys: string[]) {
+  getDeepChild(keys: string[]) {
     return keys.reduce((node, key) => node.getChild(key), this);
   }
 

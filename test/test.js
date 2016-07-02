@@ -37,7 +37,7 @@ describe('Pair', () => {
   });
 
   it('#getDeepChild', () => {
-    const subtree = tree.getDeepChild('var', 'lib');
+    const subtree = tree.getDeepChild(['var', 'lib']);
     assert.equal(subtree.getKey(), 'lib');
     const parent = subtree.getParent();
     if (parent) {
