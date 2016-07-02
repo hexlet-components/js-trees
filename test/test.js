@@ -40,11 +40,7 @@ describe('Pair', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
     assert.equal(subtree.getKey(), 'lib');
     const parent = subtree.getParent();
-    if (parent) {
-      assert.equal(parent.getKey(), 'var');
-    } else {
-      assert(false);
-    }
+    assert.equal(parent && parent.getKey(), 'var');
   });
 
   it('#removeChild', () => {
