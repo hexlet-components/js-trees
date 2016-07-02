@@ -19,6 +19,10 @@ class Tree {
     return this.key;
   }
 
+  getMeta() {
+    return this.meta;
+  }
+
   addChild(key: string, meta: mixed) {
     const child = new Tree(key, meta, this);
     this.children[key] = child;
