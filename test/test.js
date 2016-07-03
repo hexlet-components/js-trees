@@ -36,11 +36,21 @@ describe('Pair', () => {
     assert.equal(subtree.getKey(), 'var');
   });
 
+  it('#getChild undefined', () => {
+    const subtree = tree.getChild('undefined');
+    assert.equal(subtree, undefined);
+  });
+
   it('#getDeepChild', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
     assert.equal(subtree.getKey(), 'lib');
     const parent = subtree.getParent();
     assert.equal(parent && parent.getKey(), 'var');
+  });
+
+  it('#getDeepChild undefined', () => {
+    const subtree = tree.getDeepChild(['var', 'lib', 'one', 'two']);
+    assert.equal(subtree, undefined);
   });
 
   it('#removeChild', () => {

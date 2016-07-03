@@ -47,14 +47,14 @@ class Tree {
   }
 
   getChild(key: string) {
-    if (!this.hasChild(key)) {
-      throw new Error(`'${this.getKey()}' does not have child '${key}'`);
-    }
+    // if (!this.hasChild(key)) {
+    //   throw new Error(`'${this.getKey()}' does not have child '${key}'`);
+    // }
     return this.children[key];
   }
 
   getDeepChild(keys: string[]) {
-    return keys.reduce((node, key) => node.getChild(key), this);
+    return keys.reduce((node, key) => node && node.getChild(key), this);
   }
 
   getChildren() {
