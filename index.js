@@ -6,13 +6,13 @@ class Tree {
   parent: ?Tree;
   key: string;
   meta: mixed;
-  children: { [key: string]: Tree };
+  children: Map<string, Tree>;
 
   constructor(key: string, meta: mixed, parent: ?Tree) {
     this.parent = parent;
     this.key = key;
     this.meta = meta;
-    this.children = {};
+    this.children = new Map();
   }
 
   getKey() {
@@ -25,13 +25,13 @@ class Tree {
 
   addChild(key: string, meta: mixed) {
     const child = new Tree(key, meta, this);
-    this.children[key] = child;
+    this.children.set(key, child);
 
     return child;
   }
 
   hasChild(key: string) {
-    return this.children.hasOwnProperty(key);
+    return this.children.has(key);
   }
 
   getParent() {
@@ -39,18 +39,15 @@ class Tree {
   }
 
   removeChild(name: string) {
-    delete this.children[name];
+    this.children.delete(name);
   }
 
   hasChildren() {
-    return Object.keys(this.children).length > 0;
+    return this.children.size > 0;
   }
 
   getChild(key: string) {
-    // if (!this.hasChild(key)) {
-    //   throw new Error(`'${this.getKey()}' does not have child '${key}'`);
-    // }
-    return this.children[key];
+    return this.children.get(key);
   }
 
   getDeepChild(keys: string[]) {
@@ -58,7 +55,7 @@ class Tree {
   }
 
   getChildren() {
-    return Object.values(this.children);
+    return this.children.values;
   }
 }
 
