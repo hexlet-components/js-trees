@@ -28,12 +28,12 @@ describe('Pair', () => {
 
   it('#getParent', () => {
     const subtree = tree.getChild('var');
-    assert.equal(subtree.getParent(), tree);
+    assert.equal(subtree && subtree.getParent(), tree);
   });
 
   it('#getChild', () => {
     const subtree = tree.getChild('var');
-    assert.equal(subtree.getKey(), 'var');
+    assert.equal(subtree && subtree.getKey(), 'var');
   });
 
   it('#getChild undefined', () => {
@@ -43,8 +43,8 @@ describe('Pair', () => {
 
   it('#getDeepChild', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
-    assert.equal(subtree.getKey(), 'lib');
-    const parent = subtree.getParent();
+    assert.equal(subtree && subtree.getKey(), 'lib');
+    const parent = subtree && subtree.getParent();
     assert.equal(parent && parent.getKey(), 'var');
   });
 
@@ -55,7 +55,7 @@ describe('Pair', () => {
 
   it('#removeChild', () => {
     const subtree = tree.getChild('var');
-    subtree.removeChild('lib');
-    assert.ok(!subtree.hasChildren());
+    subtree && subtree.removeChild('lib');
+    assert.ok(subtree && !subtree.hasChildren());
   });
 });
