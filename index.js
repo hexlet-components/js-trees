@@ -38,8 +38,8 @@ class Tree {
     return this.parent;
   }
 
-  removeChild(name: string) {
-    this.children.delete(name);
+  removeChild(key: string) {
+    this.children.delete(key);
   }
 
   hasChildren() {
