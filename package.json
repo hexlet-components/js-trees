@@ -19,6 +19,9 @@
     "url": "https://github.com/hexlet-components/js-trees/issues"
   },
   "homepage": "https://github.com/hexlet-components/js-trees#readme",
+  "dependencies": {
+    "babel-polyfill": "*"
+  },
   "devDependencies": {
     "babel-plugin-syntax-flow": "*",
     "babel-plugin-transform-flow-strip-types": "*",
