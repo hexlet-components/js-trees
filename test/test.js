@@ -27,7 +27,8 @@ describe('Pair', () => {
   });
 
   it('#getChildren', () => {
-    assert.deepEqual(tree.getChildren(), ['var', 'etc', 'home']);
+    const dirs = tree.getChildren().map(child => child.getKey());
+    assert.deepEqual(dirs, ['var', 'etc', 'home']);
   });
 
   it('#getParent', () => {
