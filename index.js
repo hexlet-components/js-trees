@@ -55,7 +55,7 @@ class Tree {
   }
 
   getChildren() {
-    return this.children.values;
+    return [...this.children.keys()];
   }
 }
 

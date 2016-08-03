@@ -26,6 +26,10 @@ describe('Pair', () => {
     assert.ok(tree.hasChild('etc'));
   });
 
+  it('#getChildren', () => {
+    assert.deepEqual(tree.getChildren(), ['var', 'etc', 'home']);
+  });
+
   it('#getParent', () => {
     const subtree = tree.getChild('var');
     assert.equal(subtree && subtree.getParent(), tree);
