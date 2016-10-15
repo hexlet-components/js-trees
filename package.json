@@ -25,12 +25,10 @@
   "devDependencies": {
     "babel-plugin-syntax-flow": "*",
     "babel-plugin-transform-flow-strip-types": "*",
-    "babel-plugin-typecheck": "*",
     "babel-eslint": "*",
     "babel-core": "*",
     "babel-cli": "*",
-    "babel-preset-es2015": "*",
-    "babel-preset-es2016": "*",
+    "babel-preset-latest": "*",
     "babel-preset-stage-0": "*",
     "eslint": "*",
     "eslint-plugin-import": "*",
