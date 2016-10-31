@@ -1,6 +1,10 @@
 install:
 	yarn
 
+docs:
+	mkdir -p docs
+	npm run documentation -- build src/index.js -f md > docs/README.md
+
 build:
 	npm run build
 
@@ -13,4 +17,4 @@ lint:
 publish:
 	npm publish
 
-.PHONY: test
+.PHONY: test docs

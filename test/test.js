@@ -3,7 +3,7 @@
 import { before, describe, it } from 'mocha';
 import assert from 'assert';
 
-import Tree from '../index';
+import Tree from '../src/index';
 
 describe('Pair', () => {
   let tree;

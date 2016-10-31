@@ -4,8 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "documentation": "documentation",
     "test": "mocha --compilers js:babel-core/register",
-    "build": "NODE_ENV=production babel index.js --out-dir dist --source-maps inline",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "eslint": "eslint",
     "prepublish": "npm run build"
   },
@@ -23,6 +24,7 @@
     "babel-polyfill": "*"
   },
   "devDependencies": {
+    "documentation": "v4.0.0-beta11",
     "babel-plugin-syntax-flow": "*",
     "babel-plugin-transform-flow-strip-types": "*",
     "babel-eslint": "*",
