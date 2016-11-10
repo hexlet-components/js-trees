@@ -1,7 +1,5 @@
 // @flow
 
-import 'babel-polyfill';
-
 /**
  * Class that represent an arbitary tree
  */
