@@ -5,10 +5,14 @@
   "main": "dist/index.js",
   "scripts": {
     "documentation": "documentation",
-    "test": "mocha --compilers js:babel-core/register",
+    "flow-typed": "flow-typed",
+    "test": "jest --colors",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "eslint": "eslint",
     "prepublish": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -21,20 +25,20 @@
   },
   "homepage": "https://github.com/hexlet-components/js-trees#readme",
   "dependencies": {
+    "babel-preset-env": "*",
+    "babel-preset-flow": "*",
+    "babel-preset-stage-0": "*"
   },
   "devDependencies": {
-    "babel-plugin-transform-runtime": "*",
-    "documentation": "v4.0.0-beta11",
-    "babel-plugin-syntax-flow": "*",
-    "babel-plugin-transform-flow-strip-types": "*",
-    "babel-eslint": "*",
-    "babel-core": "*",
     "babel-cli": "*",
-    "babel-preset-latest": "*",
-    "babel-preset-stage-0": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "documentation": "v4.0.0-rc.1",
     "eslint": "*",
-    "eslint-plugin-import": "*",
     "eslint-config-airbnb": "*",
-    "mocha": "*"
+    "eslint-plugin-flowtype": "*",
+    "flow-bin": "0.47",
+    "flow-typed": "*",
+    "jest": "^20"
   }
 }

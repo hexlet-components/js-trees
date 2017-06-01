@@ -1,14 +1,11 @@
 // @flow
 
-import { before, describe, it } from 'mocha';
-import assert from 'assert';
+import Tree from '../src';
 
-import Tree from '../src/index';
-
-describe('Pair', () => {
+describe('Tree', () => {
   let tree;
 
-  before(() => {
+  beforeEach(() => {
     tree = new Tree('/');
     tree.addChild('var')
       .addChild('lib')
@@ -18,57 +15,57 @@ describe('Pair', () => {
   });
 
   it('#hasChildren', () => {
-    assert.ok(tree.hasChildren());
+    expect(tree.hasChildren()).toBe(true);
   });
 
   it('#hasChild', () => {
-    assert.ok(!tree.hasChild('/'));
-    assert.ok(tree.hasChild('etc'));
+    expect(tree.hasChild('/')).toBe(false);
+    expect(tree.hasChild('etc')).toBe(true);
   });
 
   it('#getChildren', () => {
     const dirs = tree.getChildren().map(child => child.getKey());
-    assert.deepEqual(dirs, ['var', 'etc', 'home']);
+    expect(dirs).toEqual(['var', 'etc', 'home']);
   });
 
   it('#getParent', () => {
     const subtree = tree.getChild('var');
-    assert.equal(subtree && subtree.getParent(), tree);
+    expect(subtree && subtree.getParent()).toEqual(tree);
   });
 
   it('#getChild', () => {
     const subtree = tree.getChild('var');
-    assert.equal(subtree && subtree.getKey(), 'var');
+    expect(subtree && subtree.getKey()).toEqual('var');
   });
 
   it('#getChild undefined', () => {
     const subtree = tree.getChild('undefined');
-    assert.equal(subtree, undefined);
+    expect(subtree).toEqual(undefined);
   });
 
   it('#getDeepChild', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
     if (subtree) {
-      assert.equal(subtree.getKey(), 'lib');
+      expect(subtree.getKey()).toEqual('lib');
       const parent = subtree.getParent();
-      assert.equal(parent && parent.getKey(), 'var');
+      expect(parent && parent.getKey()).toEqual('var');
     } else {
-      assert.ok(false);
+      expect(false).toBe(true);
     }
   });
 
   it('#getDeepChild undefined', () => {
     const subtree = tree.getDeepChild(['var', 'lib', 'one', 'two']);
-    assert.equal(subtree, undefined);
+    expect(subtree).toEqual(undefined);
   });
 
   it('#removeChild', () => {
     const subtree = tree.getChild('var');
     if (subtree) {
       subtree.removeChild('lib');
-      assert.ok(!subtree.hasChildren());
+      expect(!subtree.hasChildren()).toBe(true);
     } else {
-      assert.ok(false);
+      expect(false).toBe(true);
     }
   });
 });
