@@ -1,6 +1,6 @@
 install:
 	yarn
-	npm run flow-typed install
+	npm run flow-typed install -- --overwrite
 
 docs:
 	mkdir -p docs

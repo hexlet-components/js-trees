@@ -30,14 +30,16 @@
     "babel-preset-stage-0": "*"
   },
   "devDependencies": {
+    "source-map-support": "*",
     "babel-cli": "*",
     "babel-core": "*",
     "babel-eslint": "*",
-    "documentation": "v4.0.0-rc.1",
+    "documentation": "^v4.0.0-rc.1",
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-flowtype": "*",
-    "flow-bin": "0.47",
+    "eslint-plugin-import": "*",
+    "flow-bin": "0.48",
     "flow-typed": "*",
     "jest": "^20"
   }

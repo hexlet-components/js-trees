@@ -1,12 +1,14 @@
 // @flow
 
+import 'source-map-support/register'
+
 /**
  * Class that represent an arbitary tree
  */
 class Tree {
-  // parent: *;
-  // key: *;
-  // meta: *;
+  parent: *;
+  key: *;
+  meta: *;
   children: Map<string, Tree>;
 
   /**
@@ -86,7 +88,7 @@ class Tree {
    * tree.hasChild('etc'); // false
    */
   removeChild(key: string): boolean {
-    this.children.delete(key);
+    return this.children.delete(key);
   }
 
   /**
@@ -108,7 +110,7 @@ class Tree {
    * const node = tree.addChild('etc');
    * node === tree.getChild('etc'); // true
    */
-  getChild(key: string): Tree | undefined {
+  getChild(key: string) {
     return this.children.get(key);
   }
 
@@ -122,7 +124,7 @@ class Tree {
    * etcNode === tree.getDeepChild(['etc']);
    * tree.getDeepChild(['etc', 'lalala']); // undefined
    */
-  getDeepChild(keys: Array<string>): Tree | undefined {
+  getDeepChild(keys: Array<string>): ?Tree {
     const [key, ...rest] = keys;
     const node = this.getChild(key);
     if (rest.length === 0 || node === undefined) {
