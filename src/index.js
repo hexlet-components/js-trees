@@ -1,6 +1,6 @@
 // @flow
 
-import 'source-map-support/register'
+import 'source-map-support/register';
 
 /**
  * Class that represent an arbitary tree

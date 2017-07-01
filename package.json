@@ -27,10 +27,10 @@
   "dependencies": {
     "babel-preset-env": "*",
     "babel-preset-flow": "*",
+    "source-map-support": "*",
     "babel-preset-stage-0": "*"
   },
   "devDependencies": {
-    "source-map-support": "*",
     "babel-cli": "*",
     "babel-core": "*",
     "babel-eslint": "*",
