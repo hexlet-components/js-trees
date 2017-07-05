@@ -38,7 +38,7 @@ class Tree {
    * Get node's meta
    * @example
    * const tree = new Tree('/', 'root directory');
-   * tree.getMeta; // root directory
+   * tree.getMeta(); // root directory
    */
   getMeta() {
     return this.meta;
