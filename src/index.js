@@ -118,7 +118,7 @@ class Tree {
    * Get tree's deep child
    * @example
    * const tree = new Tree('/');
-   * const etcNode tree.addChild('etc');
+   * const etcNode = tree.addChild('etc');
    * const libNode = tree.addChild('lib');
    * libNode === tree.getDeepChild(['etc', 'lib']);
    * etcNode === tree.getDeepChild(['etc']);
