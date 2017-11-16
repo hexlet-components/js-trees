@@ -37,7 +37,7 @@
     "eslint-config-airbnb": "*",
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
-    "flow-bin": "0.55",
+    "flow-bin": "0.58",
     "flow-typed": "*",
     "jest": "^21"
   }

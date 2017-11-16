@@ -1,4 +1,5 @@
 node_modules
 dist
 *.log
+.tern-port
 flow-typed

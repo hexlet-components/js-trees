@@ -166,7 +166,7 @@ Get tree's deep child
 ```javascript
 const tree = new Tree('/');
 const etcNode = tree.addChild('etc');
-const libNode = libNode.addChild('lib');
+const libNode = etcNode.addChild('lib');
 libNode === tree.getDeepChild(['etc', 'lib']);
 etcNode === tree.getDeepChild(['etc']);
 tree.getDeepChild(['etc', 'lalala']); // undefined
