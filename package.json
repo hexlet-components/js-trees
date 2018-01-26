@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "documentation": "documentation",
+    "flow": "flow",
     "flow-typed": "flow-typed",
     "test": "jest --colors",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -22,10 +23,9 @@
   },
   "homepage": "https://github.com/hexlet-components/js-trees#readme",
   "dependencies": {
-    "babel-preset-env": "*",
+    "babelpreset-env": "*",
     "babel-preset-flow": "*",
-    "babel-preset-stage-0": "*",
-    "source-map-support": "*"
+    "babel-preset-stage-0": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -34,11 +34,12 @@
     "babel-jest": "*",
     "documentation": "*",
     "eslint": "*",
+    "eslint-plugin-jest": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
-    "flow-bin": "0.58",
+    "flow-bin": "^0.64",
     "flow-typed": "*",
-    "jest": "^21"
+    "jest": "^22"
   }
 }
