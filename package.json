@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/hexlet-components/js-trees#readme",
   "dependencies": {
-    "babelpreset-env": "*",
+    "@babel/preset-env": "*",
     "babel-preset-flow": "*",
     "babel-preset-stage-0": "*"
   },
