@@ -1,20 +1,15 @@
-// @flow
+// @ts-check
 
 /**
  * Class that represent an arbitary tree
  */
 class Tree {
-  parent: *;
-  key: *;
-  meta: *;
-  children: Map<string, Tree>;
-
   /**
    * Constructor
    * @example
    * const tree = new Tree('/');
    */
-  constructor(key: string, meta: ?mixed, parent: ?Tree) {
+  constructor(key, meta, parent) {
     this.parent = parent;
     this.key = key;
     this.meta = meta;
@@ -26,9 +21,9 @@ class Tree {
    * @example
    * const tree = new Tree('/');
    * const node = tree.addChild('etc');
-   * node.getKey(); // etc
+   * node.getKey(); // 'etc'
    */
-  getKey(): string {
+  getKey() {
     return this.key;
   }
 
@@ -36,7 +31,7 @@ class Tree {
    * Get node's meta
    * @example
    * const tree = new Tree('/', 'root directory');
-   * tree.getMeta(); // root directory
+   * tree.getMeta(); // 'root directory'
    */
   getMeta() {
     return this.meta;
@@ -48,7 +43,7 @@ class Tree {
    * const tree = new Tree('/');
    * const node = tree.addChild('etc', { writable: false });
    */
-  addChild(key: string, meta: ?mixed): Tree {
+  addChild(key, meta) {
     const child = new Tree(key, meta, this);
     this.children.set(key, child);
 
@@ -62,7 +57,7 @@ class Tree {
    * tree.addChild('etc');
    * tree.hasChild('etc'); // true
    */
-  hasChild(key: string): boolean {
+  hasChild(key) {
     return this.children.has(key);
   }
 
@@ -73,7 +68,7 @@ class Tree {
    * const node = tree.addChild('etc');
    * node.getParent() === tree; // true
    */
-  getParent(): ?Tree {
+  getParent() {
     return this.parent;
   }
 
@@ -85,7 +80,7 @@ class Tree {
    * tree.removeChild('etc');
    * tree.hasChild('etc'); // false
    */
-  removeChild(key: string): boolean {
+  removeChild(key) {
     return this.children.delete(key);
   }
 
@@ -97,7 +92,7 @@ class Tree {
    * tree.addChild('etc');
    * tree.hasChildren(); // true
    */
-  hasChildren(): boolean {
+  hasChildren() {
     return this.children.size > 0;
   }
 
@@ -108,7 +103,7 @@ class Tree {
    * const node = tree.addChild('etc');
    * node === tree.getChild('etc'); // true
    */
-  getChild(key: string) {
+  getChild(key) {
     return this.children.get(key);
   }
 
@@ -122,7 +117,7 @@ class Tree {
    * etcNode === tree.getDeepChild(['etc']);
    * tree.getDeepChild(['etc', 'lalala']); // undefined
    */
-  getDeepChild(keys: Array<string>): ?Tree {
+  getDeepChild(keys) {
     const [key, ...rest] = keys;
     const node = this.getChild(key);
     if (rest.length === 0 || node === undefined) {
@@ -134,7 +129,7 @@ class Tree {
   /**
    * Get node's children
    */
-  getChildren(): Array<Tree> {
+  getChildren() {
     return [...this.children.values()];
   }
 }

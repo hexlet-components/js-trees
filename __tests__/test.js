@@ -1,4 +1,4 @@
-// @flow
+// @ts-check
 
 import Tree from '../src';
 
@@ -24,7 +24,7 @@ describe('Tree', () => {
   });
 
   it('#getChildren', () => {
-    const dirs = tree.getChildren().map(child => child.getKey());
+    const dirs = tree.getChildren().map((child) => child.getKey());
     expect(dirs).toEqual(['var', 'etc', 'home']);
   });
 
