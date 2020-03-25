@@ -21,7 +21,7 @@ class Tree {
    * @example
    * const tree = new Tree('/');
    * const node = tree.addChild('etc');
-   * node.getKey(); // etc
+   * node.getKey(); // 'etc'
    */
   getKey() {
     return this.key;
@@ -31,7 +31,7 @@ class Tree {
    * Get node's meta
    * @example
    * const tree = new Tree('/', 'root directory');
-   * tree.getMeta(); // root directory
+   * tree.getMeta(); // 'root directory'
    */
   getMeta() {
     return this.meta;
