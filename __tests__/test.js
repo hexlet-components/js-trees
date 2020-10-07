@@ -45,9 +45,11 @@ describe('Tree', () => {
 
   it('#getDeepChild', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
+    expect(subtree).not.toBeUndefined();
     expect(subtree.getKey()).toEqual('lib');
     const parent = subtree.getParent();
-    expect(parent && parent.getKey()).toEqual('var');
+    expect(parent).not.toBeUndefined();
+    expect(parent.getKey()).toEqual('var');
   });
 
   it('#getDeepChild undefined', () => {
@@ -57,7 +59,8 @@ describe('Tree', () => {
 
   it('#removeChild', () => {
     const subtree = tree.getChild('var');
+    expect(subtree).not.toBeUndefined();
     subtree.removeChild('lib');
-    expect(!subtree.hasChildren()).toBe(true);
+    expect(subtree.hasChildren()).toBe(false);
   });
 });
