@@ -1,6 +1,6 @@
 // @ts-check
 
-import Tree from '../src';
+import Tree from '../src/index.js';
 
 describe('Tree', () => {
   let tree;
@@ -45,13 +45,9 @@ describe('Tree', () => {
 
   it('#getDeepChild', () => {
     const subtree = tree.getDeepChild(['var', 'lib']);
-    if (subtree) {
-      expect(subtree.getKey()).toEqual('lib');
-      const parent = subtree.getParent();
-      expect(parent && parent.getKey()).toEqual('var');
-    } else {
-      expect(false).toBe(true);
-    }
+    expect(subtree.getKey()).toEqual('lib');
+    const parent = subtree.getParent();
+    expect(parent && parent.getKey()).toEqual('var');
   });
 
   it('#getDeepChild undefined', () => {
@@ -61,11 +57,7 @@ describe('Tree', () => {
 
   it('#removeChild', () => {
     const subtree = tree.getChild('var');
-    if (subtree) {
-      subtree.removeChild('lib');
-      expect(!subtree.hasChildren()).toBe(true);
-    } else {
-      expect(false).toBe(true);
-    }
+    subtree.removeChild('lib');
+    expect(!subtree.hasChildren()).toBe(true);
   });
 });
