@@ -1,6 +1,6 @@
 // @ts-check
 
-import Tree from '../src/index.js';
+import Tree from '../index.js';
 
 describe('Tree', () => {
   let tree;
