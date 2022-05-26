@@ -39,9 +39,9 @@ Class that represent an arbitary tree
 
 ### Parameters
 
--   `key`  
--   `meta`  
--   `parent`  
+-   `key`
+-   `meta`
+-   `parent`
 
 ### getKey
 
@@ -72,8 +72,8 @@ Add child to node's children list
 
 #### Parameters
 
--   `key`  
--   `meta`  
+-   `key`
+-   `meta`
 
 #### Examples
 
@@ -88,7 +88,7 @@ Check if node has child by key
 
 #### Parameters
 
--   `key`  
+-   `key`
 
 #### Examples
 
@@ -116,7 +116,7 @@ remove child from tree
 
 #### Parameters
 
--   `key`  
+-   `key`
 
 #### Examples
 
@@ -146,7 +146,7 @@ Get tree's child by key
 
 #### Parameters
 
--   `key`  
+-   `key`
 
 #### Examples
 
@@ -162,7 +162,7 @@ Get tree's deep child
 
 #### Parameters
 
--   `keys`  
+-   `keys`
 
 #### Examples
 
