@@ -7,9 +7,7 @@ describe('Tree', () => {
 
   beforeEach(() => {
     tree = new Tree('/');
-    tree.addChild('var')
-      .addChild('lib')
-      .addChild('run');
+    tree.addChild('var').addChild('lib').addChild('run');
     tree.addChild('etc');
     tree.addChild('home');
   });
