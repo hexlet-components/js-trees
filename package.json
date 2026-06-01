@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": ">=26.0"
+  },
   "scripts": {
     "documentation": "documentation",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "vitest run",
+    "lint": "biome check ."
   },
   "repository": {
     "type": "git",
@@ -20,12 +24,8 @@
   "homepage": "https://github.com/hexlet-components/js-trees#readme",
   "dependencies": {},
   "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
     "documentation": "^14.0.0",
-    "eslint": "^8.16.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^26.2.2",
-    "jest": "^28.1.0",
-    "jest-cli": "^28.1.0"
+    "vitest": "^4.0.15"
   }
 }
