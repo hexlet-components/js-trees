@@ -1,64 +1,64 @@
 // @ts-check
 
-import Tree from '../index.js';
+import Tree from "../index.js";
 
-describe('Tree', () => {
+describe("Tree", () => {
   let tree;
 
   beforeEach(() => {
-    tree = new Tree('/');
-    tree.addChild('var').addChild('lib').addChild('run');
-    tree.addChild('etc');
-    tree.addChild('home');
+    tree = new Tree("/");
+    tree.addChild("var").addChild("lib").addChild("run");
+    tree.addChild("etc");
+    tree.addChild("home");
   });
 
-  it('#hasChildren', () => {
+  it("#hasChildren", () => {
     expect(tree.hasChildren()).toBe(true);
   });
 
-  it('#hasChild', () => {
-    expect(tree.hasChild('/')).toBe(false);
-    expect(tree.hasChild('etc')).toBe(true);
+  it("#hasChild", () => {
+    expect(tree.hasChild("/")).toBe(false);
+    expect(tree.hasChild("etc")).toBe(true);
   });
 
-  it('#getChildren', () => {
+  it("#getChildren", () => {
     const dirs = tree.getChildren().map((child) => child.getKey());
-    expect(dirs).toEqual(['var', 'etc', 'home']);
+    expect(dirs).toEqual(["var", "etc", "home"]);
   });
 
-  it('#getParent', () => {
-    const subtree = tree.getChild('var');
+  it("#getParent", () => {
+    const subtree = tree.getChild("var");
     expect(subtree && subtree.getParent()).toEqual(tree);
   });
 
-  it('#getChild', () => {
-    const subtree = tree.getChild('var');
-    expect(subtree && subtree.getKey()).toEqual('var');
+  it("#getChild", () => {
+    const subtree = tree.getChild("var");
+    expect(subtree && subtree.getKey()).toEqual("var");
   });
 
-  it('#getChild undefined', () => {
-    const subtree = tree.getChild('undefined');
+  it("#getChild undefined", () => {
+    const subtree = tree.getChild("undefined");
     expect(subtree).toEqual(undefined);
   });
 
-  it('#getDeepChild', () => {
-    const subtree = tree.getDeepChild(['var', 'lib']);
+  it("#getDeepChild", () => {
+    const subtree = tree.getDeepChild(["var", "lib"]);
     expect(subtree).not.toBeUndefined();
-    expect(subtree.getKey()).toEqual('lib');
+    expect(subtree.getKey()).toEqual("lib");
     const parent = subtree.getParent();
     expect(parent).not.toBeUndefined();
-    expect(parent.getKey()).toEqual('var');
+    expect(parent.getKey()).toEqual("var");
   });
 
-  it('#getDeepChild undefined', () => {
-    const subtree = tree.getDeepChild(['var', 'lib', 'one', 'two']);
+  it("#getDeepChild undefined", () => {
+    const subtree = tree.getDeepChild(["var", "lib", "one", "two"]);
     expect(subtree).toEqual(undefined);
   });
 
-  it('#removeChild', () => {
-    const subtree = tree.getChild('var');
+  it("#removeChild", () => {
+    const subtree = tree.getChild("var");
     expect(subtree).not.toBeUndefined();
-    subtree.removeChild('lib');
+    subtree.removeChild("lib");
     expect(subtree.hasChildren()).toBe(false);
   });
 });
