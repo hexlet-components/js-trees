@@ -2,6 +2,16 @@
 
 [![github action status](https://github.com/hexlet-components/js-trees/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-components/js-trees/actions)
 
+## Зачем это нужно
+
+Деревья на изменяемых узлах: узел знает своих детей и родителя, и его можно
+менять на месте. Нужна курсам, где разбирают обход дерева и рекурсию.
+
+Парная к ней библиотека
+[@hexlet/immutable-fs-trees](https://github.com/hexlet-components/js-immutable-fs-trees)
+решает ту же задачу неизменяемыми структурами: сравнение двух подходов и есть
+предмет изучения.
+
 ## Install
 
 ```sh
