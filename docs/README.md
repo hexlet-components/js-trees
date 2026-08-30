@@ -6,32 +6,32 @@
 
 ### Table of Contents
 
--   [Tree][1]
-    -   [Parameters][2]
-    -   [getKey][3]
-        -   [Examples][4]
-    -   [getMeta][5]
-        -   [Examples][6]
-    -   [addChild][7]
-        -   [Parameters][8]
-        -   [Examples][9]
-    -   [hasChild][10]
-        -   [Parameters][11]
-        -   [Examples][12]
-    -   [getParent][13]
-        -   [Examples][14]
-    -   [removeChild][15]
-        -   [Parameters][16]
-        -   [Examples][17]
-    -   [hasChildren][18]
-        -   [Examples][19]
-    -   [getChild][20]
-        -   [Parameters][21]
-        -   [Examples][22]
-    -   [getDeepChild][23]
-        -   [Parameters][24]
-        -   [Examples][25]
-    -   [getChildren][26]
+- [Tree][1]
+    - [Parameters][2]
+    - [getKey][3]
+        - [Examples][4]
+    - [getMeta][5]
+        - [Examples][6]
+    - [addChild][7]
+        - [Parameters][8]
+        - [Examples][9]
+    - [hasChild][10]
+        - [Parameters][11]
+        - [Examples][12]
+    - [getParent][13]
+        - [Examples][14]
+    - [removeChild][15]
+        - [Parameters][16]
+        - [Examples][17]
+    - [hasChildren][18]
+        - [Examples][19]
+    - [getChild][20]
+        - [Parameters][21]
+        - [Examples][22]
+    - [getDeepChild][23]
+        - [Parameters][24]
+        - [Examples][25]
+    - [getChildren][26]
 
 ## Tree
 
@@ -39,9 +39,9 @@ Class that represent an arbitary tree
 
 ### Parameters
 
--   `key`
--   `meta`
--   `parent`
+- `key`
+- `meta`
+- `parent`
 
 ### getKey
 
@@ -72,8 +72,8 @@ Add child to node's children list
 
 #### Parameters
 
--   `key`
--   `meta`
+- `key`
+- `meta`
 
 #### Examples
 
@@ -88,7 +88,7 @@ Check if node has child by key
 
 #### Parameters
 
--   `key`
+- `key`
 
 #### Examples
 
@@ -116,7 +116,7 @@ remove child from tree
 
 #### Parameters
 
--   `key`
+- `key`
 
 #### Examples
 
@@ -146,7 +146,7 @@ Get tree's child by key
 
 #### Parameters
 
--   `key`
+- `key`
 
 #### Examples
 
@@ -162,7 +162,7 @@ Get tree's deep child
 
 #### Parameters
 
--   `keys`
+- `keys`
 
 #### Examples
 
