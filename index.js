@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * Class that represent an arbitary tree
+ * Class that represent an arbitrary tree
  */
 class Tree {
   /**
